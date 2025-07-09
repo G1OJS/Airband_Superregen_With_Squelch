@@ -7,7 +7,7 @@ Last summer (2023) I got the construction bug and wanted to build an airband rec
 So I set about Googling and found quite a few designs for superregen receivers and a particular superhet kit that comes up very often based around
 the NE602 oscillator/mixer and several op-amps, plus an "IF can" transformer. I wanted to make something that was as close to an all-transistor all-solid-state design as I could (in other words, things I had to hand!). 
 
-![Airband Superregen Receiver Build 230909]({{ site.baseurl }}/assets/img/Airband Superregen Receiver Build Photo 230909.jpg)
+![Airband Superregen Receiver Build Photo 230909](https://github.com/user-attachments/assets/944162ea-7087-4c48-bb8c-145479dd8290)
 
 At the time (despite being a Ham since 1984 and an electronics engineering graduate) I hadn't realised that a SuperRegenerative receiver is very different from a Regenerative Receiver. Key things I leaned straightaway - a superregen receiver:
 
@@ -22,7 +22,7 @@ The circuit used above started off as my build of a circuit found at lots of pla
 
 I added an RF gain stage and two-transistor audio amplifier, and spent *a lot* of time investigating the effect of changing the component values in the quench frequency components and audio tap. The circuit I ended up with is below, and it works really well:
 
-![Airband Superregen Receiver 230909]({{ site.baseurl }}/assets/img/Airband Superregen Receiver 230909.png)
+![Airband Superregen Receiver 230909](https://github.com/user-attachments/assets/d2ba4f8f-19ff-49e8-ac1b-a65f94ac5b54)
 
 Construction note: keep leads short as possible in the RF parts (first two transistors). If you find the 10pF capacitor connected to the varicap diode in the photo above, you'll see that the path to ground via that capacitor and the varicap diode is a lot shorter than it appears from the circuit diagram. 
 
