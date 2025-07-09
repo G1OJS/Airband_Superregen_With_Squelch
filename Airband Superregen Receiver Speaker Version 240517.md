@@ -1,9 +1,6 @@
----
-layout: default
-title: "VHF AM Airband Superregen Receiver with Speaker and Squelch Circuit"
-permalink: /VHF-AM-SuperRegen Speaker/
----
-![]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen Speaker Version BJT SK Filter LM386 Outside.png){: .align-right}
+# G1OJS VHF AM Airband Superregen Receiver with Squelch
+
+![G1OJS Airband Superregen Speaker Version BJT SK Filter LM386 Outside](https://github.com/user-attachments/assets/06e96d61-19ee-455c-9098-12b94734332a)
 
 This page describes my Superregen VHF AM Airband receiver with Squelch, and provides some background around approaches to solving the problems of designing squelch circuits for superregen receivers. 
 
@@ -14,19 +11,17 @@ This circuit has several advantages over a superhet design:
 - AGC action inherent in the superregen circuit, so no AGC circuit needed
 - Superregen "capture effect"
 
-{:style="clear: right"}
-
 # Circuit description
 The diagram below shows the entire circuit diagram. The subsections below describe the operation of the various parts.
 
-![Airband Superregen Receiver Schematic]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24.png)
+![G1OJS Airband Superregen With Squelch 17-05-24](https://github.com/user-attachments/assets/925f7cf6-9f3a-40df-b3bf-b522bcacc610)
 
 ## Superregen Receiver Oscillator Section
 The Superregen circuit shown in the diagram below, based around Q2, is nothing new, and follows several designs available on the web. I have used an off-the-shelf ferrite inductor for the emitter lead choke (L1) rather than a home wound coil. L2 is then the only home-made component, and is about 5 turns of 0.9mm ECW air cored & wound on a former with a diameter of about 6mm.
 
 As with all superregenerative oscillators (SROs), it is necessary to precede the circuit by an amplifier stage to avoid radiation of the oscillations produced by the SRO. Q1 performs this function and provides sufficient gain to allow the SRO to detect signals as low as -110 dBm.
 
-![Airband Superregen Receiver Schematic SRO Section]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24 SRO Section.png)
+![G1OJS Airband Superregen With Squelch 17-05-24 SRO Section](https://github.com/user-attachments/assets/c4e561fb-10bd-491f-8850-54746cc5443a)
 
 ## Detector and Audio Chain
 The diagram below shows the detector, buffer and audio filter.
@@ -35,14 +30,13 @@ The detector is Q3 & based on the configuration recommended in Dr Eddie Insam's 
 
 Note: I added the SK filter because I wanted to get the best possible audio from the receiver; I wanted to minimise hiss above highest modulation frequencies and design a "Rolls Royce" superregen audio chain. I have since found that the improvements to audio are slight (reasonably similar results can be had from my [Earpiece Version]({{ site.baseurl }}/VHF-AM-SuperRegen Earpiece)) but the filter does, I think, provide a useful foundation for the minimal squelch circuit described below - I'm not sure it would work so well without the SK filter present in the audio chain.
 
-![Airband Superregen Receiver Schematic Audio Section]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24 Audio Section.png)
-
+![G1OJS Airband Superregen With Squelch 17-05-24 Audio Section](https://github.com/user-attachments/assets/d66057e6-0f00-4159-8d75-7c9dfe24dc39)
 
 ## Approaches to Squelch Circuits for Superregen Receivers
 Squelch circuits can be quite tricky to implement in SRO receivers because the background noise under "no signal" conditions can be almost as loud as wanted signals when a carrier is present. The figure below shows the audio spectrum measured (averaged over 10s of seconds) at the emitter of Q5 - the output of the Sallen Key filter. The blue trace shows the receiver tuned to no signal, and the black trace shows the receiver tuned to a continuously broadcasting VOLMET station. It can be seen that, using the traditional audio squelch method of measuring the received level over the range containing demodulated audio (up to approx 2.5kHz in this design), it would be difficult to discriminate between no signal and wanted signal cases.
- 
-![G1OJS Airband Superregen 17-05-24 Audio Spectra]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen 17-05-24 Audio Spectra.jpg) 
- 
+
+![G1OJS Airband Superregen 17-05-24 Audio Spectra](https://github.com/user-attachments/assets/9bd99387-6309-4538-a6a4-c03273144525)
+
 However, there are several ways around this problem, as described in the subsections below.
 
 Note: the spectrum plot above also shows the strong signal at the quench frequency around 20kHz, even after the Sallen Key filter providing approx 67 dB rejection at this frequency. We can also see how the quench frequency is increased slightly when there is a carrier present.
@@ -61,7 +55,7 @@ A traditional approach can be used if the demodulated audio is filtered tightly 
 
 Number of components required is about 19 plus two ICs.
 
-![Airband Superregen Receiver Schematic Audio Squelch Circuit]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24 Audio Squelch Circuit.png)
+![G1OJS Airband Superregen With Squelch 17-05-24 Audio Squelch Circuit](https://github.com/user-attachments/assets/24a555f7-5daf-4d19-8773-9cf1f81f7356)
 
 ### Voice Cadence / Syllabic Squelch
 This circuit is an implementation of a type of channel activity squelch. The idea is to monitor the audio spectrum (again tightly filtered as in the approach immediately above) but instead of triggering the squelch based on the *level* of the audio, watch for *changes* in the audio level. This way, the squelch responds to the transition between "no signal" hiss and the quieted audio on reception of an unmodulated carrier, and also responds to the cadence of voice signals (the increase and decrease in volume across speech sounds is itself a signal that can be monitored).
@@ -77,12 +71,12 @@ An advantage of this circuit is that in addition to closing on "no signal" condi
 
 Number of components required is about 22.
 
-![Airband Superregen Receiver Schematic Cadence Squelch Circuit]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24 Cadence Squelch Circuit.png)
+![G1OJS Airband Superregen With Squelch 17-05-24 Cadence Squelch Circuit](https://github.com/user-attachments/assets/7ddbdb05-684e-4736-a5c6-31607a6451f8)
 
 ## Squelch Circuit Used
 The squelch circuit used monitors the "no signal" noise above the highest modulation frequency and watches for the amplitude of this to fall when a carrier is present (quieting). When this audio level falls below a threshold, the squelch opens. This is the "Chanel Quieting Squelch" approach in the "Squelch Circuit Background" section above, but is implemented with fewer components (and no op-amp ICs). This is achieved by omitting the tight bandpass filter and gain stage, and dealing with the implications of this as described below.
 
-![Airband Superregen Receiver Schematic Noise Squelch Circuit]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24 Noise Squelch Circuit.png)
+![G1OJS Airband Superregen With Squelch 17-05-24 Noise Squelch Circuit](https://github.com/user-attachments/assets/8fc74556-ff52-4458-8ca6-96c398ec0341)
 
 Although the sharp bandpass filter is omitted, this circuit takes advantage of the 3rd order low pass filtering provided by the Sallen-Key filter around Q5, and uses a fairly basic high pass filter (C101 working against the input impedance of Q101) to work with this and create a wider bandpass filter in aggregate. 
 
@@ -99,7 +93,7 @@ Number of components required is about 13.
 ## Audio Amplifier Section
 The audio amplifier uses a simple LM386 circuit, again aiming to keep the overall component count low.
 
-![Airband Superregen Receiver Schematic Audio Amp Circuit]({{ site.baseurl }}/assets/img/G1OJS Airband Superregen With Squelch 17-05-24 Audio Amp.png)
+![G1OJS Airband Superregen With Squelch 17-05-24 Audio Amp](https://github.com/user-attachments/assets/6de833a1-205e-400b-9142-d24c5d9d25e9)
 
 # Summary
 This little receiver is very pleasant to use, and has a total component count of about 62 depending on what you count as a "component"!
