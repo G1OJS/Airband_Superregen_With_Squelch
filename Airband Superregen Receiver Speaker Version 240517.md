@@ -1,4 +1,4 @@
-# G1OJS VHF AM Airband Superregen Receiver with Speaker and Squelch Circuit
+# G1OJS VHF AM Airband Superregen Receiver with Squelch
 
 ![G1OJS Airband Superregen Speaker Version BJT SK Filter LM386 Outside](https://github.com/user-attachments/assets/06e96d61-19ee-455c-9098-12b94734332a)
 
